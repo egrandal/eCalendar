@@ -1,4 +1,4 @@
-# eGrandal Booking
+# eCalendar
 
 Base local para sustituir la reserva embebida de Koalendar en egrandal.pro.
 Nombre provisional del proyecto. Esta entrega prepara el entorno: **todavía no reserva citas ni conecta con Google**.
@@ -7,12 +7,12 @@ Nombre provisional del proyecto. Esta entrega prepara el entorno: **todavía no 
 
 Requisitos en Windows/WSL: Docker Desktop funcionando con integración para tu distribución WSL, VS Code con WSL y Dev Containers. Node, pnpm y MariaDB se instalan dentro del contenedor.
 
-Guarda y descomprime `egrandal-booking.zip` en el sistema de archivos Linux, dejando esta estructura: `~/projects/egrandal-booking/.devcontainer/devcontainer.json`. Evita `/mnt/c` para el repositorio y sus dependencias.
+Guarda y descomprime `eCalendar.zip` en el sistema de archivos Linux, dejando esta estructura: `~/projects/eCalendar/.devcontainer/devcontainer.json`. Evita `/mnt/c` para el repositorio y sus dependencias.
 
 Desde la terminal WSL:
 
 ```bash
-cd ~/projects/egrandal-booking
+cd ~/projects/eCalendar
 docker version
 docker compose version
 code .
