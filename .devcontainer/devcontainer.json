@@ -1,0 +1,40 @@
+{
+  "name": "eGrandal Booking",
+  "dockerComposeFile": "compose.yaml",
+  "service": "app",
+  "runServices": ["app", "db"],
+  "workspaceFolder": "/workspace",
+  "remoteUser": "vscode",
+  "updateRemoteUserUID": true,
+  "shutdownAction": "stopCompose",
+  "features": { "ghcr.io/devcontainers/features/github-cli:1": {} },
+  "remoteEnv": { "HOME": "/home/vscode" },
+  "forwardPorts": [3000, 5173, 5174],
+  "portsAttributes": {
+    "3000": { "label": "API y versión compilada", "onAutoForward": "silent" },
+    "5173": { "label": "Administración", "onAutoForward": "notify" },
+    "5174": { "label": "Widget de desarrollo", "onAutoForward": "silent" }
+  },
+  "postCreateCommand": "bash .devcontainer/bootstrap.sh",
+  "postStartCommand": "bash .devcontainer/startup.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "openai.chatgpt",
+        "ms-azuretools.vscode-docker",
+        "mikestead.dotenv"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "terminal.integrated.enablePersistentSessions": true,
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "typescript.tsdk": "node_modules/typescript/lib",
+        "files.eol": "\n"
+      }
+    }
+  }
+}

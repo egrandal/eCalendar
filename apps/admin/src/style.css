@@ -1,0 +1,37 @@
+:root {
+  font-family: system-ui, sans-serif;
+  color: #15342d;
+  background: #f2f5f0;
+}
+body {
+  margin: 0;
+}
+main {
+  max-width: 700px;
+  margin: 10vh auto;
+  padding: 32px;
+}
+.eyebrow {
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+}
+h1 {
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  line-height: 1.1;
+}
+p {
+  line-height: 1.7;
+}
+.status {
+  display: inline-block;
+  background: #deeadb;
+  border-radius: 10px;
+  padding: 12px 18px;
+}
+a {
+  color: #176c55;
+}
+.note {
+  font-size: 0.85rem;
+  color: #5a6c65;
+}

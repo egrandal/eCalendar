@@ -1,0 +1,28 @@
+{
+  "name": "egrandal-booking",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@10.33.2",
+  "engines": {
+    "node": ">=24 <25",
+    "pnpm": ">=10 <11"
+  },
+  "scripts": {
+    "dev": "concurrently -k -n api,admin,widget \"pnpm --filter @eg/api dev\" \"pnpm --filter @eg/admin dev\" \"pnpm --filter @eg/widget dev\"",
+    "build": "pnpm -r build",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm --filter @eg/api test",
+    "check": "pnpm build && pnpm typecheck && pnpm test",
+    "start": "node apps/api/dist/server.js",
+    "db:generate": "pnpm --filter @eg/database generate",
+    "db:migrate": "pnpm --filter @eg/database migrate",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "concurrently": "10.0.5",
+    "prettier": "3.9.9",
+    "typescript": "5.9.3",
+    "@types/node": "24.19.0"
+  }
+}

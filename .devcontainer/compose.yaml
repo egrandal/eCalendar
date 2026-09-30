@@ -1,0 +1,40 @@
+name: egrandal-booking-dev
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    init: true
+    working_dir: /workspace
+    command: sleep infinity
+    volumes:
+      - ..:/workspace
+      - codex:/home/vscode/.codex
+      - gh-config:/home/vscode/.config/gh
+      - pnpm-store:/home/vscode/.pnpm-store
+    environment:
+      NODE_ENV: development
+      TZ: Europe/Madrid
+    depends_on:
+      db:
+        condition: service_healthy
+  db:
+    image: mariadb:11.4
+    environment:
+      MARIADB_DATABASE: booking
+      MARIADB_USER: booking
+      MARIADB_PASSWORD: booking_dev
+      MARIADB_ROOT_PASSWORD: root_dev_only
+    volumes:
+      - db-data:/var/lib/mysql
+    healthcheck:
+      test: [CMD, healthcheck.sh, --connect, --innodb_initialized]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 20s
+volumes:
+  codex:
+  gh-config:
+  pnpm-store:
+  db-data:
