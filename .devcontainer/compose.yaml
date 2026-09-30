@@ -1,4 +1,4 @@
-name: egrandal-booking-dev
+name: ecalendar-dev
 services:
   app:
     build:

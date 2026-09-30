@@ -1,12 +1,12 @@
 # Arquitectura inicial
 
-Motor de reservas propio y reutilizable; primera instalación para Esteban. Implementación inicial para un único anfitrión. API independiente de WordPress/Astro, con widget Lit y administración React.
+Motor de reservas propio y reutilizable. Implementación inicial para un único anfitrión. API independiente de WordPress/Astro, con widget Lit y administración React.
 
 ## Decisiones conservadas
 
 - TypeScript, Fastify, React + Vite, Lit y Drizzle.
 - MariaDB para el inicio local, compatible con la última propuesta de alojamiento; Plesk no es un requisito del código.
-- URL prevista `citas.egrandal.pro`, sin configurar DNS ni producción ahora.
+- URL provisional `calendar.egrandal.pro`, sin configurar DNS ni producción ahora.
 - Desarrollo en WSL mediante Dev Containers. Un contenedor de herramientas y otro de base de datos.
 - Producción conceptual con una API Node y archivos estáticos compilados. La infraestructura de producción se decidirá por separado.
 - Web Component principal, futura API pública, página independiente, SDK popup e iframe de respaldo.

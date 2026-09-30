@@ -13,7 +13,7 @@ export async function buildApp(options: {
   app.get("/health", async (_request, reply): Promise<HealthResponse> => {
     // Único recurso público actual: estado sin datos personales ni credenciales.
     reply.header("Access-Control-Allow-Origin", "*");
-    return { status: "ok", service: "egrandal-booking" };
+    return { status: "ok", service: "ecalendar" };
   });
   app.get("/ready", async (_request, reply): Promise<ReadinessResponse> => {
     try {

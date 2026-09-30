@@ -1,6 +1,6 @@
 export interface HealthResponse {
   status: "ok";
-  service: "egrandal-booking";
+  service: "ecalendar";
 }
 export interface ReadinessResponse {
   status: "ok" | "unavailable";

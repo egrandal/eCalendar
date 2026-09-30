@@ -1,5 +1,5 @@
 {
-  "name": "eGrandal Booking",
+  "name": "eCalendar",
   "dockerComposeFile": "compose.yaml",
   "service": "app",
   "runServices": ["app", "db"],

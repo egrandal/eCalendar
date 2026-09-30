@@ -8,7 +8,9 @@ test("liveness responde aunque la base de datos falle; readiness devuelve 503 si
     },
   });
   try {
-    assert.equal((await app.inject("/health")).statusCode, 200);
+    const health = await app.inject("/health");
+    assert.equal(health.statusCode, 200);
+    assert.deepEqual(health.json(), { status: "ok", service: "ecalendar" });
     const ready = await app.inject("/ready");
     assert.equal(ready.statusCode, 503);
     assert.deepEqual(ready.json(), {
